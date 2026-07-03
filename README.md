@@ -1,6 +1,6 @@
 # codex-reconnect-fix-skill
 
-一个用于修复 Codex 代理环境变量的本地 Skill。它会检测本地代理软件端口，并把 `HTTP_PROXY`、`HTTPS_PROXY`、`NO_PROXY` 写入 Codex 根目录的 `.env` 文件。
+通过自动检测本地代理端口并刷新 Codex .env 代理配置解决Codex一直重新连接的问题，支持 macOS 和 Windows。
 
 ## 适用场景
 
@@ -25,6 +25,22 @@ NO_PROXY="localhost,127.0.0.1,::1"
 ```
 
 ## 安装
+
+### 方式一：通过 Codex 安装
+
+在 Codex 中输入：
+
+```text
+请安装 GitHub 仓库 zhuimengFIRE/codex-reconnect-fix-skill 中的 Skill
+```
+
+或直接使用仓库地址：
+
+```text
+请从 https://github.com/zhuimengFIRE/codex-reconnect-fix-skill 安装 Skill
+```
+
+### 方式二：手动复制安装
 
 把整个目录复制到 Codex 的 skills 目录：
 
@@ -79,4 +95,4 @@ python3 -m py_compile scripts/refresh_codex_proxy_env.py
 
 ## 仓库简介
 
-Codex Skill：自动检测本地代理端口并刷新 Codex `.env` 代理配置，支持 macOS 和 Windows。
+通过自动检测本地代理端口并刷新 Codex .env 代理配置解决Codex一直重新连接的问题，支持 macOS 和 Windows。
