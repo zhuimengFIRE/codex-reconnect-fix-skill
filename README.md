@@ -54,26 +54,6 @@ cp -R codex-reconnect-fix-skill ~/.codex/skills/
 用 $codex-reconnect-fix-skill 修复代理
 ```
 
-## 直接运行脚本
-
-在 skill 目录内执行：
-
-```bash
-python3 scripts/refresh_codex_proxy_env.py
-```
-
-强制指定端口：
-
-```bash
-python3 scripts/refresh_codex_proxy_env.py --port 7897
-```
-
-使用临时 Codex 根目录测试：
-
-```bash
-python3 scripts/refresh_codex_proxy_env.py --codex-root /tmp/codex-root-test
-```
-
 ## 端口检测逻辑
 
 脚本会按顺序检查：
