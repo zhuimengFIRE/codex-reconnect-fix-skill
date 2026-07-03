@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex 代理修复"
+  short_description: "检测本地代理端口并写入 Codex .env"
+  default_prompt: "使用 $codex-reconnect-fix-skill 刷新 Codex .env 代理配置。"
