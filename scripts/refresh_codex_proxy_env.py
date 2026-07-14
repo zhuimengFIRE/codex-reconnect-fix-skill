@@ -15,7 +15,7 @@ from typing import Iterable
 
 
 NO_PROXY_VALUE = "localhost,127.0.0.1,::1"
-PROXY_KEYS = {"HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY"}
+PROXY_KEYS = {"HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY"}
 LOCAL_HOSTS = {"127.0.0.1", "localhost", "::1", "::", "0.0.0.0", "*"}
 PROXY_PROCESS_WORDS = (
     "clash",
@@ -401,6 +401,7 @@ def update_env_file(env_path: Path, port: int) -> None:
         [
             f'HTTP_PROXY="http://127.0.0.1:{port}"',
             f'HTTPS_PROXY="http://127.0.0.1:{port}"',
+            f'ALL_PROXY="socks5h://127.0.0.1:{port}"',
             f'NO_PROXY="{NO_PROXY_VALUE}"',
         ]
     )

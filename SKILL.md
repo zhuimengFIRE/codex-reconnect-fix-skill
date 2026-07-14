@@ -1,6 +1,6 @@
 ---
 name: codex-reconnect-fix-skill
-description: 通过检测本地代理端口并写入 Codex 根目录的 .env 文件，刷新 Codex 代理环境变量 HTTP_PROXY、HTTPS_PROXY 和 NO_PROXY。用于 Codex 出现 reconnect/network 问题、需要恢复代理配置，或用户要求根据本地代理软件更新 Codex .env 代理变量的场景。
+description: 通过检测本地代理端口并写入 Codex 根目录的 .env 文件，刷新 Codex 代理环境变量 HTTP_PROXY、HTTPS_PROXY、ALL_PROXY 和 NO_PROXY。用于 Codex 出现 reconnect/network 问题、需要恢复代理配置，或用户要求根据本地代理软件更新 Codex .env 代理变量的场景。
 ---
 
 # Codex 代理重连修复
@@ -18,10 +18,11 @@ python3 scripts/refresh_codex_proxy_env.py
 ```dotenv
 HTTP_PROXY="http://127.0.0.1:<检测到的端口>"
 HTTPS_PROXY="http://127.0.0.1:<检测到的端口>"
+ALL_PROXY="socks5h://127.0.0.1:<检测到的端口>"
 NO_PROXY="localhost,127.0.0.1,::1"
 ```
 
-脚本会保留 `.env` 中不相关的现有内容，只替换 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NO_PROXY`。
+脚本会保留 `.env` 中不相关的现有内容，只替换 `HTTP_PROXY`、`HTTPS_PROXY`、`ALL_PROXY` 和 `NO_PROXY`。
 
 ## 端口检测
 
